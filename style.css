@@ -6,32 +6,26 @@ body{
 
 header{
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   position:sticky;
+   top:0px;
 }
 
-.container {
-   position: relative;
-   width: 50%;
-}
-.container .button {
-   position: absolute;
-   top: 115%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   -ms-transform: translate(-50%, -50%);
-   background-color: #555;
-   color: white;
-   font-size: 16px;
-   padding: 12px 24px;
-   border: none;
-   cursor: pointer;
+.card-image{
    border-radius: 8px;
-   width: 250px;
+   height: 200px;
 }
 
 .card{
-   box-shadow: 0 4px 8px 0 grey;
+   border-radius: 8px;
    transition: 0.3s;
-   width:20%;
+   width: 300px;
+   text-align: center;
+   box-shadow: 0 2px 4px 0 grey;
+}
+
+.grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .card:hover{
