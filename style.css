@@ -13,6 +13,12 @@ header{
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.galleryphoto{
+   border-radius: 0px;
+   height: 200;
+   width: 400;
+}
+
 .card-image{
    border-radius: 8px;
    height: 200px;
@@ -33,6 +39,11 @@ header{
    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+.grid2{
+   display: grid;
+   justify-items: center;
+   grid-template-columns: 1fr 1fr;
+}
 
 .card:hover{
    box-shadow: 0 8px 16px 0 grey;
