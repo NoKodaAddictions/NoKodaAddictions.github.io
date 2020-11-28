@@ -14,9 +14,10 @@ header{
 }
 
 .galleryphoto{
-   border-radius: 0px;
-   height: 200;
-   width: 400;
+   clear:left;
+   display: block;
+   padding: 20px 0 0 20px;
+   position: relative;
 }
 
 .card-image{
@@ -69,11 +70,6 @@ header{
    background-color: rgb(88,88,88);
 }
 
-img{
-   border-width:5px;
-   border-color: black;
-   border-radius: 8px;
-}
 
 footer{
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
