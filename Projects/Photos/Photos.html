@@ -10,9 +10,67 @@
         <hr color="black" size="10"/>
         <br/>
     </head>
+    <style>
+        .gridmain{
+            display: grid;
+            justify-items: center;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+        }
+        .cardphoto{
+            transition: 0.3s;
+            width: auto;
+            height: auto;
+            text-align: center;
+            justify-items: center;
+        }
+    </style>
     <body>
-        <img src="https://drive.google.com/uc?export=view&id=16eDaxG8G83pJs6up5Pkb6cmYuCWzJC19" class="galleryphoto" height="200" width="400" alt="Fall View">
-        <img src="https://drive.google.com/uc?export=view&id=1cHv1c6_iLL8_OmRxmNUvpQsq-FZM_CyB" class="galleryphoto" height="350" width="400" alt="Baltimore Building">
-        <img src="https://drive.google.com/uc?export=view&id=1G9lsqnXCTLyA3rJ6ECJajZPVmKjlpUTl" class="galleryphoto" height="200" width="450" alt="Washington WW2 Memorial">
+        <div class="gridmain">
+            <div class="cardphoto">
+                <img src="https://drive.google.com/uc?export=view&id=16eDaxG8G83pJs6up5Pkb6cmYuCWzJC19" class="img" title="Fall View" height="200" width="450" alt="Fall View">
+                <h6>Fall View</h6>
+            </div>
+            <div class="cardphoto">
+                <img src="https://drive.google.com/uc?export=view&id=1cHv1c6_iLL8_OmRxmNUvpQsq-FZM_CyB" class="img" height="350" width="400" alt="Baltimore Building">
+                <h6>Baltimore Building</h6>
+            </div>
+            <div class="cardphoto">
+                <img src="https://drive.google.com/uc?export=view&id=1G9lsqnXCTLyA3rJ6ECJajZPVmKjlpUTl" class="img" height="200" width="450" alt="Washington WW2 Memorial">
+                <h6>Washington WW2 Memorial</h6>
+            </div>
+        </div>
+        <br>
+        <div class="gridmain">
+            <div class="cardphoto">
+                <img src="https://drive.google.com/uc?export=view&id=1Ec749D_38CqVd0TiwiOnClxUFTUdoVky" class="img" height="300" width="400" alt="Airfield View">
+                <h6>Airfield View</h6>
+            </div>
+            <div class="cardphoto">
+                <img src="https://drive.google.com/uc?export=view&id=1kxZUjweVZbOLgoA633Tj1-ufMrveWJ4Y" class="img" height="300" width="400" alt="Cessna Right Wing">
+                <h6>Cessna Right Wing</h6>
+            </div>
+            <div class="cardphoto">
+                <img src="https://drive.google.com/uc?export=view&id=15hFmcN_iSrK2VXxZJV8IbSwZLMgqC6kU" class="img" height="300" width="400" alt="Sunset Landing">
+                <h6>Sunset Landing</h6>
+            </div>     
+        </div>
+        
     </body>
+    <footer>
+        <hr color="black" size="10"/>
+        <br/>
+        <button class="button" onclick="window.location.href='https://github.com/ThatCodeAddict';">GitHub</button>
+        <button class="button" onclick="window.location.href='https://www.youtube.com/channel/UCZpglibs4u5zWTv-hRiOgvQ/videos?view_as=subscriber';">YouTube</button>
+        <p>2020 ThatCodeAddict | EM Technologies</p>
+        <img src="https://drive.google.com/uc?export=view&id=11xXk5fVuL5aLEnecYSsUqLiAwwh_G0JR" height="49" width="49"><img src="https://drive.google.com/uc?export=view&id=1etRKOKhKGPYUh2wiQR6xDnzAHqVb9tdr" height="49" width="57">
+    </footer>
 </html>
