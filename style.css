@@ -31,13 +31,13 @@ header{
    display: grid;
    justify-items: center;
    margin: auto;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
+   grid-template-columns: auto auto auto auto;
 }
 
 .grid2{
    display: grid;
    justify-items: center;
-   grid-template-columns: 1fr 1fr;
+   grid-template-columns: auto auto;
 }
 
 .card:hover{
