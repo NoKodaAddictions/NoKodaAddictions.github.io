@@ -1,7 +1,8 @@
 body{
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   background: white;
+   background: lightgrey;
    text-align: center;
+
 }
 
 .midtext{
@@ -9,34 +10,32 @@ body{
    font-size: medium;
 }
 
-header{
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
 .card-image{
-   border-radius: 8px;
    height: 200px;
 }
 
 .card{
-   border-radius: 8px;
    transition: 0.3s;
    width: 300px;
    text-align: center;
-   box-shadow: 0 2px 4px 0 grey;
+   box-shadow: 0 2px 4px 0 black;
+   border-color: black;
+   color:black;
 }
 
 
 .grid {
+   padding-left: .5in;
    display: grid;
+   grid-gap:5em;
    justify-items: center;
    margin: auto;
-   grid-template-columns: auto auto auto auto;
+   grid-template-columns: repeat(auto-fill, 300px);
+   
 }
 
-
 .card:hover{
-   box-shadow: 0 8px 16px 0 grey;
+   box-shadow: 0 8px 16px 0 black;
 }
 
 .button {
@@ -58,6 +57,7 @@ header{
 
 .button:active{
    background-color: rgb(88,88,88);
+   transition: 0s;
 }
 
 
