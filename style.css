@@ -1,3 +1,9 @@
+/*
+Made By NoKoda
+2021 NoKodaAddictions
+EM Technologies
+*/
+
 body{
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
    background: lightgrey;
@@ -21,6 +27,7 @@ body{
    box-shadow: 0 2px 4px 0 black;
    border-color: black;
    color:black;
+   background-color:tan;
 }
 
 
