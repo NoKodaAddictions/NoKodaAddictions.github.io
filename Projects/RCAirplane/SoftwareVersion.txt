@@ -1,2 +1,0 @@
-Version-Client,0.1
-Version-Aircraft,0.0
