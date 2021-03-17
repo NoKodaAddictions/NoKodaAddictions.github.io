@@ -7,15 +7,16 @@ EM Technologies
 body{
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
    color: aliceblue;
-   background: #000712;
+   background: #12161a;
    text-align: center;
-
+   border: #695e1b 2px solid;
 }
 
 header{
-   position: sticky;
    top: 0;
-   background-color: inherit;
+   background-color: #12161a;
+   opacity: 100%;
+   border-radius: 8px;
 }
 
 .grid{
@@ -49,8 +50,17 @@ header{
    width: 500px;
 }
 
+.code{
+   width: 550px;
+   height: auto;
+   border:none;
+   justify-content: center;
+   justify-self: center;
+   margin: 0 auto;
+}
+
 button{
-   background-color: #216db5;
+   background-color: #695e1b;
    border: none;
    color: white;
    padding: 10px 32px;
