@@ -9,7 +9,6 @@ body{
    color: aliceblue;
    background: #12161a;
    text-align: center;
-   border: #695e1b 2px solid;
 }
 
 header{
@@ -51,7 +50,7 @@ header{
 }
 
 .code{
-   width: 550px;
+   width: 600px;
    height: auto;
    border:none;
    justify-content: center;
@@ -60,7 +59,7 @@ header{
 }
 
 button{
-   background-color: #695e1b;
+   background-color: #705e1b;
    border: none;
    color: white;
    padding: 10px 32px;
