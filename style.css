@@ -13,9 +13,9 @@ body{
 
 header{
    top: 0;
-   background-color: #12161a;
+   position:sticky;
+   background-color: inherit;
    opacity: 100%;
-   border-radius: 8px;
 }
 
 .grid{
@@ -49,13 +49,32 @@ header{
    width: 500px;
 }
 
+.item{
+   text-align: center;
+   margin:0 auto;
+}
+
 .code{
-   width: 600px;
-   height: auto;
-   border:none;
-   justify-content: center;
+   display: flex;
+   flex-wrap: wrap;
    justify-self: center;
+   justify-content: center;
+   justify-items: start;
+   padding: 0;
+   grid-gap:2em;
+   grid-template-columns: repeat(auto-fit, 300px);
+}
+
+.verticalgrid{
+   display: grid;
+   flex-wrap: wrap;
+   justify-self: center;
+   justify-content: center;
+   justify-items: start;
+   padding: 0;
    margin: 0 auto;
+   grid-gap:2em;
+   grid-template-columns: 1fr;
 }
 
 button{
