@@ -4,6 +4,10 @@ Made By NoKoda
 EM Technologies
 */
 
+html{
+   scroll-behavior: smooth;
+}
+
 body{
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', sans-serif;
    color: aliceblue;
@@ -16,6 +20,7 @@ header{
    position:sticky;
    background-color: inherit;
    opacity: 100%;
+   color:white;
 }
 
 .grid{
@@ -38,7 +43,7 @@ header{
 }
 
 .card {
-   background-color: #7e7e7e;
+   background-color:#2e3036;
    width: 300px;
    height: auto;
    border: 1px solid white;
@@ -77,22 +82,70 @@ header{
    grid-template-columns: 1fr;
 }
 
-button{
+a{
+   text-decoration: none;
+}
+
+/* Credit: w3schools.com */
+
+.dropdown{
+   position: relative;
+   display: inline-block;
+}
+
+.dropdown-content {
+   transition:0.2s;
+   display: none;
+   text-decoration: none;
+   position: absolute;
    background-color: #705e1b;
-   border: none;
+   border:1px solid white;
+   border-radius: 8px;
+   min-width: 20px;
+   padding:2px 8px;
+}
+
+.dropdown-content a:hover {
+   transition:0.2s;
+   border:1px solid white;
+   background-color: #12161a;
+}
+
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+.dropdown:hover button {
+   background-color: black;
+   border: 4px solid white;
+}
+
+/* Credit: w3schools.com ^*/
+
+.gist{
+   z-index: -900;
+   color:white;
+   text-align: center;
+   margin:0;
+}
+
+button{
+   transition:0.2s;
+   background-color: #705e1b;
+   border: -1px solid white;
    color: white;
-   padding: 10px 32px;
+   padding: 10px 22px;
    text-align: center;
    text-decoration: none;
    display: inline-block;
-   font-size: 16px;
+   font-size: 14px;
    border-radius: 8px;
 }
 
 button:hover{
    transition: 0.2s;
-   background-color: black;
-   border: 4px solid white;
+   background-color: #12161a;
+   border: 2px solid white;
 }
 
 button:active{
