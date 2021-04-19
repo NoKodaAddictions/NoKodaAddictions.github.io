@@ -149,7 +149,8 @@ button:hover{
 }
 
 button:active{
-   background-color: grey;
+   transition: 0;
+   background-color: gray;
 }
 
 footer{
