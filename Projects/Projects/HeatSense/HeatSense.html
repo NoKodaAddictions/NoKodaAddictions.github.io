@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="A System That Detects Motion And Heat.">
+        <meta name="keywords" content="NoKodaAddictions, NoKoda, Heat, HeatSense, Python, Raspberry Pi">
+        <meta name="author" content="NoKoda">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link itemprop="image" href="https://drive.google.com/uc?export=view&id=11xXk5fVuL5aLEnecYSsUqLiAwwh_G0JR">
+        <link rel="shortcut icon" href="https://drive.google.com/uc?export=view&id=11xXk5fVuL5aLEnecYSsUqLiAwwh_G0JR">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> <!--Credit To w3schools.com-->
+        <link rel="stylesheet" type="text/css" href="/style.css">
+        <title>HeatSense Project | NoKoda</title>
+    </head>
+    <header class="w3-animate-opacity">
+        <h2>HeatSense Project</h2>
+        <button class="button" onclick="window.location.href='/index.html'">Home</button>
+        <button class="button" onclick="window.open('https://github.com/NoKodaAddictions/HeatSenseProject')">GitHub Repository</button>
+        <button class="button" onclick="window.open('https://drive.google.com/file/d/1ds3eS_IKyN4V81t5YU8YZ3QBvEvTUmvM/view?usp=sharing')">Additional Information</button> 
+        <button class="button" onclick="window.open('ListOfParts.txt')">List Of Parts</button> 
+        <button class="button" onclick="window.location.href='HeatSense1.1.html'">1.1 - Concept Update</button> 
+        <hr/>
+    </header>
+    <body class="w3-animate-opacity">
+        <h2>Intro</h2>
+        <p>
+            Many children are being left inside cars unknowingly and consequently dying due to an immense amount of heat. <br>
+            In 2019, a whopping 51 cases were reported! Reason being that they don't think this kind of situation will happen to them <br> 
+         </p>
+         <h2> How Hot Can A Car Get? </h2>
+            
+         <p>
+            Given enough time, a vehicle's internal temperature can spike to about 172℉. Almost like an oven! Speaking of ovens. A test <br> was
+            conducted by Kars For Kids about the awareness of leaving children in hot cars. They asked random people to sit in <br> a parked car for
+            about 10 minutes. All of them went in, confident they could sit for that long. That is what happened at first. <br> But, as time progressed,
+            they attempted to open the windows but to no avail. Some tried to fan themselves to keep cool. <br> Every single person that took the test failed.
+            If that wasn't enough, Kars For Kids also put cookie dough on the dashboard of <br> the car. Some time later, the cookies had finished baking.
+         </p>
+         <h2>Current Solutions</h2>
+         <p>Currently, There are 3 different solutions. Sensorsafe, General Motors Rear Seat Reminder Ssytem, And Driver's Little Helper. <br> Although these solutions are good,
+            there are some limitations. With Sensorsafe, the costs for the booster seats are very expensive. <br> For General Motors, the system only works if the back door was opened
+            and is only in select cars such as Chevorlet, Cadillac, <br> and GMC. Driver's Little helper on the other hand takes about 1 minute to send a notification to
+            the driver. By the time it is sent, <br> the driver may be a few meters away (maybe in a grocery store, etc).
+        </p>
+        <h2>Criteria And Constraints</h2>
+        <p>
+            If I am going to create a device to solve this problem, this device needs to be: <br>
+            1: Compact And Portable - Easier for drivers to place the module <br>
+            2: Heat Resistant - To make sure the module doesn't short out from the rising heat. <br>
+            3: Cost - Has to be cheap so many people can afford it 
+        </p>
+        <h2>Solution</h2>
+        <img class="image" height="200" width="275" src="https://drive.google.com/uc?export=view&id=14cLHR8lkz3QdCrNgTB2447CL9LGzs3AN"> <img class="image" height="200" width="325" src="https://drive.google.com/uc?export=view&id=19UJrkVSvYbcJphXxKgb8e3BtiJP1uKH5">
+        <p>
+            This is the current solution I created. It uses a motion sensor and a temperature sensor to detect people inside the car.
+            Basically, <br> if the system detects a hot temperature, it will check to see if there is motion inside the car. If so, sound an alarm.
+    
+            <br>
+        </p>
+        <h2>System Hardware And Connections:</h2>
+        <p>
+                1: Raspberry Pi 3 <br>
+                2: DHT22 Temperature/Humidity Sensor <br>
+                3: PIR (Passive Infrared) Motion Sensor <br>
+                4: Speaker
+        </p>
+
+    </body>
+    <br>
+    <footer class="w3-animate-opacity">
+        <hr/>
+        <div class="footergrid">
+            <img src="https://drive.google.com/uc?export=view&id=11xXk5fVuL5aLEnecYSsUqLiAwwh_G0JR" height="50">
+            <button onclick="window.open('https://github.com/NoKodaAddictions')">GitHub</button>
+            <button onclick="window.open('https://www.youtube.com/channel/UCZpglibs4u5zWTv-hRiOgvQ')">YouTube</button>
+            <img src="https://drive.google.com/uc?export=view&id=1etRKOKhKGPYUh2wiQR6xDnzAHqVb9tdr" height="49" width="57">
+        </div>
+        <p>2021 NoKodaAddictions</p>
+    </footer>
+</html>
+
+<!--Owned By NoKodaAddictions - Krishay Iyer-->

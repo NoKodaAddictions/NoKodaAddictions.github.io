@@ -1,0 +1,47 @@
+List Of Parts:
+
+1. Raspberry Pi 3 - 1
+2. Male/Female GPIO Wires - 6
+
+
+
+3. PIR Motion Sensor - 1
+
+Amazon Link:
+https://www.amazon.com/OSEPP-Passive-Infrared-Components-PIR-01/dp/B01ISMW0TU/ref=sr_1_14?keywords=raspberry+pi+pir&qid=1560298881&s=electronics&sr=1-14&_encoding=UTF8&tag=techwithtim08-20&linkCode=ur2&linkId=0888f8635ee901445b780beb7ca96088&camp=15121&creative=330641
+
+Video Link:
+https://www.youtube.com/watch?v=Tw0mG4YtsZk
+
+
+
+4. Temperature and Humidity Sensor - 1
+
+Amazon Link:
+https://www.amazon.com/Gikfun-Digital-Temperature-Humidity-Arduino/dp/B06Y63YMSS/ref=sr_1_7?crid=1IUHC17SNP4AQ&keywords=raspberry+pi+3+temperature+sensor&qid=1578362347&s=electronics&sprefix=raspberry+pi+3+Tem%2Celectronics%2C134&sr=1-7
+
+Video Link:
+https://www.youtube.com/watch?v=QjNyCeqcq4g
+
+
+
+5. 10K Ohm Resistor - 1
+
+Amazon Link:
+https://www.amazon.com/Projects-10EP51210K0-10k-Resistors-Pack/dp/B0185FKB0K/ref=sr_1_8?keywords=10k+ohm+resistor&qid=1578362585&s=industrial&sr=1-8
+
+
+6. Breadboard - 1
+
+Amazon Link:
+https://www.amazon.com/gp/product/B01EV6LJ7G/ref=as_li_tl?ie=UTF8&tag=techwithtim08-20&camp=15121&creative=330641&linkCode=as2&creativeASIN=B01EV6LJ7G&linkId=aad90b037aad6319c8dd299a8d6d1911
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to Send SMS Via Python Raspberry Pi
+
+Video Link:
+https://www.youtube.com/watch?v=Oi37lg_ciJ8&list=PLNnwglGGYoTvy37TSGFlv-aFkpg7owWrE&index=0
+
+Phone Number Link:
+https://www.twilio.com/
