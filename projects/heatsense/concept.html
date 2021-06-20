@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="HeatSense, HeatSense Project, Heat, Car, NoKodaAddictions, NoKoda">
+        <meta name="author" content="NoKoda, NoKodaAddictions">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/css/docs.css">
+        <link rel="shortcut icon" href="/static/icons/NoKoda-Logo.png">
+        <script type="text/javascript" src="/js/version.js"></script>
+        <title>HeatSense Concept / NoKodaAddictions</title>
+    </head>
+    <body>
+        <div class="box-outer">
+            <div class="header">
+                <h2>HeatSense Update Concept</h2>
+                <a class="button" href="/index.html">Home</a>
+                <a class="button" href="/projects/heatsense/heatsense.html">Main Project</a>
+                <a class="button" href="https://github.com/NoKodaAddictions/HeatSenseProject" target="_blank">GitHub Repository</a><br><br>
+            </div>
+            <div class="box-inner">
+                <h2>CAD Design</h2>
+                <img src="/projects/heatsense/resources/CADCaseTopView.png" height="300">
+                <img src="/projects/heatsense/resources/CADCaseLidTopView.png" height="300">
+                <p class="textbox">
+                    Here is the case designed in CAD. You can see a smaller internal box and 2 cutouts in fig.1.
+                    The smaller box houses the Raspberry Pi, while the cutouts hold both sensors (see <a href="/projects/heatsense/heatsense.html#partslist">parts list</a> for more info)
+                    The outer section will hold the battery and wires. The lid fits on top of the case with enough space to allow ventilation.
+                </p>
+                <br><br>
+                <a class="button" href="/projects/heatsense/resources/Case Assembly.stl">Download Assembly</a>
+                <a class="button" href="/projects/heatsense/resources/Case Raspberry Pi 3.stl">Download Body</a>
+                <a class="button" href="/projects/heatsense/resources/Case Lid.stl" target="_blank">Download Case Lid</a><br><br>
+                <h2>App Demo</h2>
+                <img src="/projects/heatsense/resources/AppDemo.png" height="500">
+                <p class="textbox">
+                    The new system would be connected to this app which would tell you the curent temperature,
+                    battery percentage, etc. This app would allow you to manage multiple HeatSense devices for other cars.
+                </p>
+                <h2>Case Design 1</h2>
+                <img src="/projects/heatsense/resources/CaseV1.jpg" height="300">
+                <img src="/projects/heatsense/resources/CaseV1WithModules.jpg" height="300">
+                <p class="textbox">
+                    The first design used cardboard to create the case.
+                    This is to get a rough design to help build a better second version.
+                </p>
+                <h2>Case Design 2</h2>
+                <img src="/projects/heatsense/resources/CaseV2.jpg" height="300">
+                <img src="/projects/heatsense/resources/CaseV2TopView.jpg" height="300">
+                <p class="textbox">
+                    This next design will be a metal cutout. The diagram is shown in
+                    both figures.
+                </p>
+                <h2>Further Implementation</h2>
+                <p class="textbox">
+                    Instead of having an app where you can connect, since many people won't take the
+                    time to isntall and configure it, why not integrate this into all cars? If 
+                    temperature goes above a certain threshold, the system should turn on the AC
+                    to a lower temperature to cool the interior down. A passive alternative could be
+                    to use dark-tinted glass to absorb the light and slow the rate of rising temperature.
+                </p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <img src="/static/icons/NoKoda-Logo.png" width="50" height="50">
+        <div>
+            2021 NoKodaAddictions <br>
+            Site Version: <span id="version">N/A</span>
+        </div>
+        <script>displayVersion();</script>
+    </footer>
+</html>
+<!-- 2021 NoKodaAddictions -->

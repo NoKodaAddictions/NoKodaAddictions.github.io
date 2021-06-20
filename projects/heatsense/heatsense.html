@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="HeatSense, HeatSense Project, Heat, Car, NoKodaAddictions, NoKoda">
+        <meta name="author" content="NoKoda, NoKodaAddictions">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="shortcut icon" href="/static/icons/NoKoda-Logo.png">
+        <script type="text/javascript" src="/js/version.js"></script>
+        <title>HeatSense / NoKodaAddictions</title>
+    </head>
+    <body>
+        <div class="box-outer">
+            <div class="header">
+                <h2>HeatSense</h2>
+                <a class="button" href="/index.html">Home</a>
+                <a class="button" href="/projects/heatsense/concept.html">Concept Update</a>
+                <a class="button" href="https://github.com/NoKodaAddictions/HeatSenseProject" target="_blank">GitHub Repository</a><br><br>
+            </div>
+            <div class="box-inner">
+                <h2>Intro</h2>
+                <p class="textbox">
+                    Many kids are unknowingly being locked inside a car and consequently dying due to heat.
+                    in 2019, a whopping 51 cases were reported! These issues occur since parents don't think
+                    that this situation would happen to them.
+                </p>
+                <h2>How Hot Can a Car Get?</h2>
+                <p class="textbox">
+                    Given enough time, a vehicle's internal temperature can spike to about 172℉. A test was conducted by Kars 4 Kids 
+                    to raise awareness of leaving children in hot cars. They asked random people to sit in a parked car for about 10 minutes. 
+                    They went in, confident they could sit for that long. But, as time progressed, their confidence turned into worry. 
+                    Many tried to open the windows, fan themselves, etc but to no avail. Eventually, all participants failed.
+                    If that wasn't enough, they put cookie dough on the wind shield. They baked after some time.
+                </p>
+                <iframe style="border:2px solid #00aacc;" width="373" height="210" src="https://www.youtube.com/embed/QFhS3z6GJbU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <p>Credit: Inside Edition</p>
+                <h2>Current Solutions</h2>
+                <p class="textbox">
+                    Currently, There are 3 different solutions. Sensorsafe, General Motors Rear Seat Reminder Ssytem, And Driver's Little Helper.
+                    Although these solutions are good, there are some limitations. With Sensorsafe, the costs for the booster seats are very expensive.
+                    For General Motors, the system only works if the back door was opened and is only in select cars such as Chevorlet, Cadillac,
+                    and GMC. Driver's Little helper on the other hand takes about 1 minute to send a notification to the driver. By the time it is sent,
+                    the driver may be a few meters away (maybe in a grocery store, etc)
+                </p>
+                <h2>Criteria And Constraints</h2>
+                <p>If I am going to create a device to solve this problem, this device needs to be:</p>
+                <div class="grid" style="text-align:left;">
+                    <p>1: Compact And Portable -> Easier for drivers to place the module<br><br>
+                        2: Heat Resistant -> To make sure the module doesn't short out from the rising heat.<br><br>
+                        3: Cost -> Has to be cheap so many people can afford it
+                    </p>
+                </div>
+                <h2>My Solution</h2>
+                <img  height="200" width="350" src="/projects/heatsense/resources/HSDemo1.jpg">
+                <img  height="200" width="275" src="/projects/heatsense/resources/HSDemo2.jpg">
+                <p class="textbox">This is the prototype I created. It uses a motion sensor and a temperature sensor to detect and 
+                    measure motion and ambient temperature.<br><br>
+                    After the system boots up, it will check to see if the temperature has gone above 25 deg C
+                    (above room temperature). If so, then the next step would be to check for motion.
+                    If motion is detected, then the system plays an alarm and will send an SMS message to the connected device.
+                <p>
+                    <div id="partslist"></div>
+                <h2>List Of Parts And Assembly Videos</h2>
+                <div class="grid" style="text-align:left;">
+                    <p class="textbox">
+                        1. Raspberry Pi 3 x1 <br>
+                        2. Male to Female x6 <br>
+                        3. PIR Motion Sensor x1 <br>
+                        4. DHT22 Temperature And Humidity Sensor x1
+                        5. Breadboard x1
+                    </p>
+                </div>
+                <div class="grid">
+                    <div>
+                        <p>1. PIR Motion Sensor</p>
+                        <a class="button" href="https://www.amazon.com/OSEPP-Passive-Infrared-Components-PIR-01/dp/B01ISMW0TU/ref=sr_1_14?keywords=raspberry+pi+pir&qid=1560298881&s=electronics&sr=1-14&_encoding=UTF8&tag=techwithtim08-20&linkCode=ur2&linkId=0888f8635ee901445b780beb7ca96088&camp=15121&creative=330641" target="_blank">Amazon Link</a>
+                        <a class="button" href="https://www.youtube.com/watch?v=Tw0mG4YtsZk" target="_blank">YouTube Assembly Link</a>
+                    </div>
+                    <div>
+                        <p>2. DHT22 Temperature And Humidity Sensor</p>
+                        <a class="button" href="https://www.amazon.com/HiLetgo-Temperature-Humidity-Electronic-Practice/dp/B0795F19W6/ref=sr_1_3?crid=2ZJO3UJ8STPHG&dchild=1&keywords=dht22+temperature-humidity+sensor&qid=1624047364&sprefix=DHT22+%2Caps%2C153&sr=8-3" target="_blank">Amazon Link</a>
+                        <a class="button" href="https://www.youtube.com/watch?v=QjNyCeqcq4g" target="_blank">YouTube Assembly Link</a>
+                    </div>
+                    <div>
+                        <p>3. Breadboard</p>
+                        <a class="button" href="https://www.amazon.com/gp/product/B01EV6LJ7G/ref=as_li_tl?ie=UTF8&tag=techwithtim08-20&camp=15121&creative=330641&linkCode=as2&creativeASIN=B01EV6LJ7G&linkId=aad90b037aad6319c8dd299a8d6d1911" target="_blank">Amazon Link</a>
+                    </div>
+                </div>
+                <br><br>
+                <a class="button" href="concept.html">1.1 Concept</a>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <img src="/static/icons/NoKoda-Logo.png" width="50" height="50">
+        <div>
+            2021 NoKodaAddictions <br>
+            Site Version: <span id="version">N/A</span>
+        </div>
+        <script>displayVersion();</script>
+    </footer>
+</html>
+<!-- 2021 NoKodaAddictions -->
