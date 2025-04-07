@@ -1,2 +1,2 @@
 # NoKodaAddictions.github.io
-Updates are coming.... I think...
+Yo, the updates finalliy arrived!
