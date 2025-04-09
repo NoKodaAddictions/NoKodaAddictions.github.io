@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Quote</title>
+  <script>
+    // You can copy your full quote list here
+    const quotes = [
+    "Losing brain cells.",
+    "When you forget some code you always used...",
+    "The US is in debt to who?",
+    "Someone told me to shoot my shot, I'm in prison now.", // ⚠️ optional
+    "Why are you reading this?",
+    "When, outside of school, will I use 'Shakesperian' poetry?",
+    "Bring forth thy molecule which quench thirst of thee",
+    "What's the best thing since sliced bread? Sliced bagel.",
+    "When you got a B in a class and live in an Asian household...",
+    "Marriage in a teenager's view is like being acquaintances in an adult's view.",
+    "English class is basically learning you can't understand English.",
+    "All together is written separately but separately is written all together",
+    "I'll be speaking with my lawyer is the adult version of I'm telling mom.",
+    "There's no oxygen in space, how's the sun burning? Whats the base and fuel?",
+    "Have you had an argument with a toddler? If so, you probably lost.",
+    "Why can't I ask fast food chains for extra sauce? I'll never know...",
+    "Bush had a 90% rating after 9/11; 9/10 dentists recommended Bush. George Bush is Colgate.",
+    "Is sleep the free trial of death?",
+    "Vaccines are like antivirus programs, they need a renewal every year or so.",
+    "If an Apple car was released, would it have windows?",
+    "When life gives you lemons, make lemonade. Yeah? Where is the water and the sugar?",
+    "I don't do drugs, but if someone offered me them, I'll definitely take them...and report it.",
+    "People are really becoming dumber nowadays. Maybe those microchips aren't a bad idea...",
+    "If you oppose vaccines, but still install antivirus programs for your PC...",
+    "Tech companies want to be green, but make it a pain to repair or upgrade your own device.",
+    "When you have no idea what you are doing...",
+    "Mirrors are green, look it up",
+    "If you find this in someone's email signature... blame them, not me.",
+    "Why does Australia have all its a's pronounced differently?",
+    "If poison expires, is it more, or less poisonous?",
+    "If hand sanitizer clears 99.99% of germs, put it twice.",
+    "Can a void exist with no color?",
+    "We pass our death anniversary without ever knowing.",
+    "How does glue not stick or harden in the tube?",
+    "The voice in your head never has to take a breath...",
+    "If you think it just right, you can create your own movie...",
+    "If I were a book, what title would I have?",
+    "Soulmates are the term for people you will never find.",
+    "Could the speed of light be different speeds?",
+    "There's a fifth state of matter?",
+    "Can a new color be invented?",
+    "Think about it, magenta is nowhere on the visible light spectrum.",
+    "Could there be more wavelengths past gamma? Below radio?",
+    "When you muscle memorize a password, but it still takes 7 tries to enter it...",
+    "I wonder what goes on in people's minds when they try to silently torture someone...for 4 years and counting.",
+    "Binoculars are VR Headseats of what's over there.",
+    "In Christianity, God made the sun on the fourth day, how did the people survive with no sun?",
+    "Does pansexuality mean they're in love with pans?",
+    "I asked Siri what Apple product I could afford, she said 'apple juice'",
+    "Water has no real color, shape, or form, but we still know what it is when we see it.",
+    "I checked my account balance at the ATM, it printed me a coupon for ramen noodles.",
+    "Winter is the only season that happens twice a year.",
+    "First you learn to read, then you read to learn.",
+    "Keep laughing, because your life is something to joke about. :)",
+    "Blind and deaf people have a really strong ad blocker...",
+    "Someone owes me lyrics...",
+    "It's smart to learn from your mistakes. You're a genius if you learn from other people's mistakes.",
+    "We live in an era where your refrigerator can be hacked.",
+    "When you promote mental health week, but it's PSAT week as well...",
+    "Body language is real life subtitles.",
+    "You only see pixels when there's not enough of them.",
+    "You know you messed up when even Tic-Tac can't help you.",
+    "Lifesavers will save everything else, except the ass whooping from your parents.",
+    "Everyone has the power of telekenisis, it just has limited range and a physical restriction.",
+    "Parent's ask their children what they want to be when they grow up because they're looking for ideas. - Paula Poundstone.",
+    "Friend's are God's way of apologizing to us for our families.",
+    "No one cares about your opinion on what's better, but everyone cares about your opinion on what's the best.",
+    "I like work, it fascinates me, I can sit and look at it for hours. - Jerome K. Jerome.",
+    "Some cause happiness wherever they go; others whenever they go.",
+    "Breakups lead to the best songs.",
+    "No way it's the year 2023, someone must have lost count.",
+    "The permission slips for Ms.Frizzle's field trips must have been wild.",
+    "Two things are infinite: the universe and human stupidity, and I'm not sure about the universe. - Albert Einstein.",
+    "Many things are famous only because they got killed or destroyed.",
+    "A hamburger doesn't have a front or back until you bite it.",
+    "Being up for something and being down for something mean the same thing.",
+    "Crickets are associated with silence, even though they're one of the most loudest insects.",
+    "If you're one in a million, then there are 7,125+ people the same as you.",
+    "If you think about it, a lethal dose is a lifetime supply.",
+    "You probably have passed by someone you've met on the internet without even knowing.",
+    "Nobody says 'Where are you' in sign language",
+    "Kill and execute are the same in English, but are opposite with computers.",
+    "A lot of great things are invented by people with crappy backgrounds.",
+    "James Bond never needed a visa when he was travelling for his missions...",
+    "Car movies have sidewalks, but all of them are cars...",
+    "Death makes everything meaningless and meaningful at the same time.",
+    "Schools should have the equivalent of a side effects section on an over-the-counter drug.",
+    "If you think about it, plants are growing us. Giving us oxygen until we die, only for them to eat us.",
+    "Which would be more embarrassing? My browsing history, or my calculator history?",
+    "Lawyers hope you get sued, doctors hope you get sick, cops hope you're criminal, mechanics hope you have car trouble, but only a thief wishes prosperity for you.",
+    "How the hell does sleep work? I sleep for literally two minutes, and 10 years have gone by!",
+    "I'd like colleges to elaborate when they say 'your achievements are outstanding'.",
+    "Every time a character dies on a TV show it pretty much means they got fired.",
+    "What were ad blocker companies thinking when they decided to make ads for their software?",
+    "There should be a millennial version of monopoly where you just go around the board paying rent, not buying anything.",
+    "1984-2000 seems a very long time compared to 2000-2016.",
+    "Taxes are subscriptions that you can't cancel.",
+    "It's not a pyramid scheme' is a phrase that only people in pyramid schemes use.",
+    "If you think about it, the Japanese flag might just be a pie chart showing how much is Japan."
+  ];
+
+    function getRandomQuote() {
+      return quotes[Math.floor(Math.random() * quotes.length)];
+    }
+
+    function showQuote() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const format = urlParams.get('format');
+
+      const quote = getRandomQuote();
+
+      if (format === 'json') {
+        // Return JSON-style output
+        document.body.textContent = JSON.stringify({ quote });
+      } else {
+        // Default: plain text
+        document.body.textContent = quote;
+      }
+    }
+
+    window.onload = showQuote;
+  </script>
+</head>
+<body>
+</body>
+</html>
