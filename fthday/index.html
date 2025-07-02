@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unlock the Box Puzzle</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      padding: 2rem;
+    }
+    .question-block {
+      margin-top: 1rem;
+      width: 100%;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    .btn {
+      padding: 20px 30px 20px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 20px;
+    }
+    #animationSlides {
+      font-size: 1.75rem;
+      font-weight: bold;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+      min-height: 200px;
+    }
+    #finalMessages {
+      display: none;
+    }
+    #finalText {
+      font-size: 1.3rem;
+      font-weight: 500;
+      text-align: center;
+      margin-bottom: 1rem;
+      word-wrap: break-word;
+      line-height:1.6;
+      padding: 0 10px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container text-center">
+    <h1 class="mb-3">🔐 Father's Day Vault</h1>
+
+    <div id="setup-container" class="question-block">
+      <p class="mb-3">Welcome! Select who you are:</p>
+      <button class="btn btn-primary m-2" onclick="selectMode('appa')">APPA</button>
+      <button class="btn btn-dark m-2" onclick="selectMode('thatha')">THATHA</button>
+    </div>
+
+    <div id="animationSlides" class="d-none"></div>
+    <div id="question-container" class="question-block mt-4"></div>
+
+    <div id="finalMessages" class="mt-4">
+      <div id="finalText" class="fade-in"></div>
+      <button class="btn btn-secondary m-1" onclick="prevMessage()">Previous</button>
+      <button class="btn btn-primary m-1" onclick="nextMessage()">Next</button>
+    </div>
+  </div>
+
+  <audio id="questionAudio" autoplay></audio>
+
+  <script>
+  let questions = [];
+  let currentIndex = 0;
+  let answered = false;
+  let selectedLanguage = "english";
+  let finalMessages = [];
+  let currentFinalIndex = 0;
+  let selectedModeKey = "";
+
+  const modes = {
+    appa: {
+              questions: [
+          {
+            en: "Guess this song: ",
+            ta: "இந்தப் பாடலை யூகிக்கவும்: ",
+            answer: ["Rain Drops", "Raindrops"],
+            audio: "audio/IR_CC.mp3",
+            type: "multiple",
+            options: ["Yeh Raaten Yeh Mausam", "Fly Me To The Moon", "Rain Drops", "Likhe Jo Khath Tujhe"]
+          },
+          {
+            en: "Who sang this song?",
+            ta: "இந்தப் பாடலைப் பாடியது யார்?",
+            answer: ["Frank Sinatra"],
+            audio: "audio/FMTTM_FS.mp3",
+            type: "text"
+          },
+          {
+            en: "When you couldn't find something, but you always did, what would you always say?",
+            ta: "நீங்கள் ஏதாவது ஒன்றைக் கண்டுபிடிக்க முடியவில்லை, ஆனால் நீங்கள் எப்போதும் அதைச் செய்தீர்கள், நீங்கள் எப்போதும் என்ன சொல்வீர்கள்?",
+            answer: ["I always know where everything is", "What would you do without me", "What would you do without me?"],
+            audio: "",
+            type: "text"
+          },
+          {
+            en: "Whenever you drove the car, you would always tell us this: ",
+            ta: "நீங்கள் காரை ஓட்டும் போதெல்லாம், நீங்கள் எப்போதும் எங்களிடம் இதைச் சொல்வீர்கள்:",
+            answer: ["I want to be a race car driver"],
+            audio: "",
+            type: "multiple",
+            options: ["I want to be a race car driver", "Traffic is crazy", "I wish I could fly over this traffic", "We're late"]
+          },
+          {
+            en: "Before FIRST LEGO League, what STEM events would you always take Krishay to?",
+            ta: "FIRST LEGO லீக்கிற்கு முன்பு, நீங்கள் எப்போதும் க்ரிஷேவை எந்த STEM நிகழ்வுகளுக்கு அழைத்துச் செல்வீர்கள்?",
+            answer: ["Adventures in Science"],
+            audio: "",
+            type: "multiple",
+            options: ["Wilson Wims Science Fair", "Adventures In Science", "Montgomery College", "Science Club"]
+          },
+          {
+            en: "When practicing for the County Spelling Bee, what word did you and Krishay always joke about?",
+            ta: "கவுண்டி ஸ்பெல்லிங் பீக்காக பயிற்சி செய்யும்போது, ​​நீங்களும் க்ரிஷயும் எப்போதும் எந்த வார்த்தையைப் பற்றி கேலி செய்தீர்கள்?",
+            answer: ["Basmati"],
+            audio: "",
+            type: "multiple",
+            options: ["Unannotated", "Googol", "Basmati", "Bumbershoot"]
+          },
+          {
+            en: "What do you always tell Hridhay when he's batting?",
+            ta: "ஹிருதய் பேட்டிங் செய்யும்போது நீங்கள் எப்போதும் அவரிடம் என்ன சொல்வீர்கள்?",
+            answer: ["Settle at the crease"],
+            audio: "",
+            type: "text"
+          },
+          {
+            en: "Guess this song (Hint: You always sing this at your programs): ",
+            ta: "இந்தப் பாடலை யூகிக்கவும் (குறிப்பு: நீங்கள் எப்போதும் உங்கள் நிகழ்ச்சிகளில் இதைப் பாடுவீர்கள்):",
+            answer: ["Likhe Jo Khath Tujhe"],
+            audio: "audio/LJKT_KK.mp3",
+            type: "multiple",
+            options: ["Yeh Raaten Yeh Mausam", "Fly Me To The Moon", "Rain Drops", "Likhe Jo Khath Tujhe"]
+          },
+          {
+            en: "What do you always tell Krishay and Hridhay to grow up to be?",
+            ta: "க்ரிஷய் மற்றும் ஹ்ரிதாயிடம் நீங்கள் எப்போதும் என்னவாக வளரச் சொல்வீர்கள்?",
+            answer: ["Grow up to be good human beings", "Good human beings"],
+            audio: "",
+            type: "text"
+          },
+          {
+            en: "Guess The Song: ",
+            ta: "இந்தப் பாடலை யூகிக்கவும்: ",
+            answer: ["Budapest"],
+            audio: "audio/BP_GE_2.mp3",
+            type: "text"
+          }
+        ],
+        finalMessages: [
+           "🎉 Congratulations! You've completed the challenge! Click next to scroll through some messages and memories",
+           "Happy Father's day, Appa! Thank you for everything you've done for me. You were there at my first cricket game, you've helped me with school work a lot, and you've taught me things that I never thought would be important until you told me. I love you, Appa. - Hridhu",
+           "Hey Appa, Happy Late Father's Day! Sorry this took so long to make, but I wanted it to be just right. Appa, you've shown up for me and Hridhay every day. You've spent countless hours with us in robotics, driving us to school, music class, and practically everywhere else. You made sure we got the best education, got anything we asked for, and remembered where we came from. You've never once given up on us. I know this gift is small, compared to the vast amounts of love and effort you give every day for us, but I hope it stirred some good memories. Thank you for being the best father any child could ask for. Love you, Appa :) - Krishay",
+           "Happy Father's Day 💙"
+        ]
+        },
+        thatha: {
+        questions: [
+          {
+            en: "What does Hridhay always love watching with you?",
+            ta: "ஹிருதய் எப்போதும் உங்களுடன் என்ன பார்க்க விரும்புகிறார்?",
+            answer: ["Cricket"],
+            audio: "",
+            type: "text"
+          },
+          {
+            en: "Who composed this song?",
+            ta: "இந்தப் பாடலை இயற்றியது யார்?",
+            answer: ["Mohd Rafi", "Mohammed Rafi"],
+            audio: "audio/TAKS_MR.mp3",
+            type: "text"
+          },
+          {
+            en: "What is Vinaya's and Vaishnavi's favorite tradition when they come to Malad?",
+            ta: "வினயாவும் வைஷ்ணவியும் மலாத்துக்கு வரும்போது என்ன பாரம்பரியத்தைப் பின்பற்றுகிறார்கள்?",
+            answer: ["Soonli", "Sunli", "Sunly"],
+            audio: "",
+            type: "text"
+          },
+          {
+            en: "When Hridhay and Krishay were in 2nd-5th standard, what did 3PM signify?",
+            ta: "ஹிருதய் மற்றும் கிருஷய் 2-5 ஆம் வகுப்பு படிக்கும் போது, ​​மதியம் 3 மணி என்றால் என்ன?",
+            answer: ["Bus Stop Pickup", "Pickup", "Bus", "Bus Stop"],
+            audio: "",
+            type: "text",
+          },
+          {
+            en: "What is the name of this song?",
+            ta: "இந்தப் பாடலின் பெயர் என்ன?",
+            answer: ["Ek Pyar Ka Nagma Hai", "Ek Pyaar Ka Nagma Hai", "Lata Mangeshkar", "Mukesh"],
+            audio: "audio/EPKNH_LM.mp3",
+            type: "text",
+          }
+        ],
+        finalMessages: [
+            "Well done, Thatha! You've completed the puzzle!",
+            "We hope you enjoyed these memories",
+            "Happy Father's Day 💙"
+        ]
+        }
+    };
+
+  function selectMode(modeKey) {
+    selectedModeKey = modeKey;
+    document.getElementById('setup-container').innerHTML = `
+      <p class="mb-3">Choose a language:</p>
+      <button class="btn btn-primary m-2" onclick="startAnimation('${modeKey}', 'english')">English</button>
+      <button class="btn btn-dark m-2" onclick="startAnimation('${modeKey}', 'tamil')">தமிழ்</button>
+    `;
+  }
+
+  function startAnimation(modeKey, lang) {
+    selectedLanguage = lang;
+    const setupContainer = document.getElementById('setup-container');
+    const animationSlides = document.getElementById('animationSlides');
+    setupContainer.classList.add('d-none');
+    animationSlides.classList.remove('d-none');
+
+    const slides = [
+      "Hello " + modeKey,
+      "Welcome to the Father's Day Puzzle",
+      "Today is all about you!",
+      "We're going to take a quick trip down memory lane",
+      "Are you ready?",
+      "3", "2", "1", "Go!"
+    ];
+
+    let index = 0;
+    animationSlides.classList.add("fade-in");
+
+    const interval = setInterval(() => {
+      animationSlides.classList.remove("fade-in");
+      void animationSlides.offsetWidth;
+      animationSlides.classList.add("fade-in");
+
+      animationSlides.textContent = slides[index];
+      index++;
+
+      if (index >= slides.length) {
+        clearInterval(interval);
+        setTimeout(() => {
+          animationSlides.classList.add('d-none');
+          startGame(modeKey);
+        }, 1500);
+      }
+    }, 2250);
+  }
+
+  function startGame(modeKey) {
+    questions = modes[modeKey].questions;
+    currentIndex = 0;
+    answered = false;
+    loadQuestion(currentIndex);
+  }
+
+  function loadQuestion(index) {
+    const q = questions[index];
+    const questionText = selectedLanguage === 'english' ? q.en : q.ta;
+    const questionContainer = document.getElementById('question-container');
+    const audioPlayer = document.getElementById('questionAudio');
+
+    let html = `<div class="fade-in"><p class="mb-3">${questionText}</p>`;
+
+    if (q.type === "multiple") {
+      html += q.options.map(option =>
+        `<button class="btn btn-outline-primary m-1" onclick="submitAnswer('${option.toLowerCase()}')">${option}</button>`
+      ).join('');
+    } else {
+      html += `
+        <input type="text" id="answerInput" class="form-control mb-2" placeholder="Your answer...">
+        <button class="btn btn-success" onclick="submitAnswer()">Submit</button>
+      `;
+    }
+
+    html += `<div id="feedback" class="mt-2"></div></div>`;
+    questionContainer.innerHTML = html;
+    audioPlayer.src = q.audio;
+    audioPlayer.play().catch(() => {});
+  }
+
+  function submitAnswer(guess = null) {
+    if (answered) return;
+    answered = true;
+
+    const q = questions[currentIndex];
+    const feedback = document.getElementById('feedback');
+    const userAnswer = (guess !== null) ? guess : document.getElementById('answerInput').value.trim().toLowerCase();
+
+    const isCorrect = q.answer.some(ans => ans.toLowerCase() === userAnswer);
+
+    if (isCorrect) {
+      feedback.textContent = "✅ Correct!";
+      feedback.style.color = "green";
+      setTimeout(() => {
+        currentIndex++;
+        if (currentIndex < questions.length) {
+          answered = false;
+          loadQuestion(currentIndex);
+        } else {
+          showFinalMessages();
+        }
+      }, 1000);
+    } else {
+      answered = false;
+      feedback.textContent = "❌ Try again!";
+      feedback.style.color = "red";
+    }
+  }
+
+  function showFinalMessages() {
+    const questionContainer = document.getElementById('question-container');
+    const finalDisplay = document.getElementById('finalMessages');
+    questionContainer.innerHTML = '';
+    finalMessages = modes[selectedModeKey].finalMessages;
+    currentFinalIndex = 0;
+    finalDisplay.style.display = "block";
+    displayCurrentMessage();
+  }
+
+  function displayCurrentMessage() {
+    document.getElementById('finalText').textContent = finalMessages[currentFinalIndex];
+  }
+
+  function nextMessage() {
+    if (currentFinalIndex < finalMessages.length - 1) {
+      currentFinalIndex++;
+      displayCurrentMessage();
+    }
+  }
+
+  function prevMessage() {
+    if (currentFinalIndex > 0) {
+      currentFinalIndex--;
+      displayCurrentMessage();
+    }
+  }
+</script>
+</body>
+</html>
